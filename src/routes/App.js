@@ -1,25 +1,22 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "../styles/App.css";
-import LandingPage from "../pages/Landing";
-import SignUp from "../pages/SignUp";
-import SearchLibraryData from "../components/GetLibraryData";
-import { AppProvider } from "../context/Context";
+import LandingPage from "../pages/Landing"
+import About from "../pages/About";
+import GeneralLibrary from "../pages/Library";
+
 
 function App() {
   return (
-    <AppProvider>
+
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/Sign-Up" element={<SignUp />} />
-          <Route path="/Library" element={<SearchLibraryData />}>
-          <Route path="book"/>
-          <Route />
-          </Route>
+          <Route path="/" element={<LandingPage />}/>
+          <Route path="/About" element={<About />}/>
+          <Route path="/Library" element={<GeneralLibrary />}/>
         </Routes>
       </BrowserRouter>
-    </AppProvider>
+
   );
 }
 

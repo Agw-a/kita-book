@@ -1,24 +1,28 @@
 import React from 'react'
-import {useNavigate } from 'react-router-dom'
+import {Link } from 'react-router-dom'
+import "../styles/App.css"
+import Logo from './Logo';
 
 const NavBar = () => {
-  const navigate = useNavigate();
+
 
   return (
-    <nav>
+    <nav className='nab-bar-container'>
+      <Link to={"/"}>
+      {
+              <div className='Logo-holder'>
+              <h1>{<Logo />}Kita-Book</h1>
+            </div>
+      }
+      </Link>
 
-      <div>
-        <h1>Kita-Book</h1>
+      <div className='About-nav'>
+        <Link className='About-Link' to={"/About"}>
+          <p>About</p></Link>
       </div>
-      <div>
-      <button onClick={() => navigate("/Library")} >Browse Books</button>
-      </div>
-      <div>
-      <button onClick={() => navigate("/Log-in")}>Login</button>
-      </div>
-      <div>
-      <button onClick={() => navigate("/Sign-Up")}>SignUp</button>
-      </div>
+
+
+
       
     </nav>
   )
