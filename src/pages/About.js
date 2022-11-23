@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
     <NavBar />
-    <main>
+    <main className='About-container'>
         
         <h2>Kita-book lets you browse through an online library of books and add books to a favorite list</h2>
     </main>

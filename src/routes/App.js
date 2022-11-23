@@ -4,6 +4,9 @@ import "../styles/App.css";
 import LandingPage from "../pages/Landing"
 import About from "../pages/About";
 import GeneralLibrary from "../pages/Library";
+import Booklist from "../components/Booklist";
+import BookDetails from "../components/BookDetails";
+import Favorites from "../pages/Favorites";
 
 
 function App() {
@@ -13,7 +16,11 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />}/>
           <Route path="/About" element={<About />}/>
-          <Route path="/Library" element={<GeneralLibrary />}/>
+          <Route path="/Library" element={<GeneralLibrary />}>
+            <Route index element={<Booklist />}/>
+          </Route>
+          <Route path="/book/:id" element={<BookDetails />} />
+          <Route path="/favorites" element={<Favorites />}/>
         </Routes>
       </BrowserRouter>
 

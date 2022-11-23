@@ -41,3 +41,14 @@ footer{
   text-align: center;
   width: 100vw;
 }
+.About-container{
+  height: 100vh;
+}
+.Book-list{
+  display: grid;
+  width: 100%;
+  height: 80vh;
+  background-color: rgb(127, 145, 127);
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
