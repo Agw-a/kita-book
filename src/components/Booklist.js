@@ -10,7 +10,10 @@ const Booklist = () => {
  const {fav, addToFavorites, removeFromFavorites} = useAppContext();
 
 
+ 
+   
   const checkFavoriteBooks = (id) => {
+
     const Checker  = fav.some((book) => book.id === id)
 
     return Checker
@@ -39,8 +42,8 @@ const Booklist = () => {
               </div>
               <div>
                 {
-                  checkFavoriteBooks(book.id) ? <button onClick={() => removeFromFavorites(book)} >Remove from favorites</button> :
-                  <button onClick={() => addToFavorites(book)} >Add to favorites</button>
+                  checkFavoriteBooks(book.id) ? <button onClick={() => removeFromFavorites(book.id)} >Remove from favorites</button> :
+                  <button onClick={() => addToFavorites(book.id)} >Add to favorites</button>
                 }
                 
               </div>
