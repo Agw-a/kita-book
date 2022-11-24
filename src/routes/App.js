@@ -18,8 +18,9 @@ function App() {
           <Route path="/Library" element={<GeneralLibrary />}>
             <Route index element={<Booklist />}/>
           </Route>
-          <Route path="/book/:id" element={<BookDetails />} />
-          <Route path="/favorites" element={<Favorites />}/>
+          <Route path="Favorite-Books" element={<Favorites />}/>
+          <Route path="/books/:id" element={<BookDetails />} />
+          
         </Routes>
       </BrowserRouter>
 

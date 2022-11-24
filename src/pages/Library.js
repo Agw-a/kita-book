@@ -9,7 +9,7 @@ const GeneralLibrary = () => {
     <>
     <NavBar />
     <div>
-      <div> <Link>Your favorite books</Link></div>
+      <div> <Link to={"/Favorite-Books"}>Your favorite books</Link></div>
     
     </div>
     <Outlet />
