@@ -1,46 +1,37 @@
-import React, { useContext, useEffect, useCallback, useState } from 'react';
+import React, { useContext, useState, createContext } from "react";
 
-const URL = "http://openlibrary.org/search.json?title=";
-const AppContext = React.createContext();
+const AppContext = createContext(null);
 
-const AppProvider = ({children}) => {
-    const [searchTerms,  setSearchTerms] = useState("The lost world");
-    const [books, setBooks] = useState([]);
-    const [loading, setLoading] = useState(true)
-    const [resutTitle, setResultTitle] = useState("");
+export const useAppContext = () => {
+  const context = useContext(AppContext);
 
-    const fetchBooks = useCallback(async() => {
-        setLoading(true);
-        try {
-            const response = await  fetch(`${URL}${searchTerms}`);
-            const data = await response.json();
-            console.log(data);
-            const {docs} = data;
-        } catch (error){
-            console.log(error);
-            setLoading(false);
-        };
+  if (context === undefined) {
+    throw new Error("AppContext must be within contextprovider");
+  }
+  return context;
+};
 
-    }, [searchTerms]);
+const AppContextProvider = ({ children }) => {
+  const [fav, setFavs] = useState([]);
 
-    useEffect(() => {
-        fetchBooks();
-    }, [searchTerms, fetchBooks]);
+  const addToFavorites = (book) => {
+    const oldFavs = [...fav];
+    const newFavs = oldFavs.concat(book);
 
-    return (
-        <AppContext.Provider value= {{
-            loading, books, setSearchTerms, resutTitle, setResultTitle,
+    setFavs(newFavs);
+  };
 
-        }}>
-            {children}
-        </AppContext.Provider>
-    )
-}
+  const removeFromFavorites = (id) => {
+    const oldFavs = [...fav];
+    const newFavs = oldFavs.filter((book) => book.id !== id);
+    setFavs(newFavs);
+  };
 
+  return (
+    <AppContext.Provider value={(fav, addToFavorites, removeFromFavorites)}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
-
-export const useGlobalContext = () => {
-    return useContext(AppContext)
-}
-
-export {AppContext, AppProvider}
+export default AppContextProvider;

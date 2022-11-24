@@ -8,7 +8,6 @@ import Booklist from "../components/Booklist";
 import BookDetails from "../components/BookDetails";
 import Favorites from "../pages/Favorites";
 
-
 function App() {
   return (
 
@@ -23,6 +22,7 @@ function App() {
           <Route path="/favorites" element={<Favorites />}/>
         </Routes>
       </BrowserRouter>
+
 
   );
 }
