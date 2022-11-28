@@ -11,14 +11,14 @@ const NavBar = () => {
       <Link to={"/"}>
       {
               <div className='Logo-holder'>
-              <h1>{<Logo />}Kita-Book</h1>
+              <span>{<Logo />}Kita-Book</span>
             </div>
       }
       </Link>
 
       <div className='About-nav'>
-        <Link className='About-Link' to={"/About"}>
-          <p>About</p></Link>
+        {/* <Link className='About-Link' to={"/About"}>
+          <p>About</p></Link> */}
       </div>
 
 

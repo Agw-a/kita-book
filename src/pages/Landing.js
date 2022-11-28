@@ -11,19 +11,30 @@ const LandingPage = () => {
     <>
       <NavBar />
       <main className="homepage-body">
-        <div>
+        {/* <div className="hero-img">
           <h1>01.</h1>
           <h1>Discover Books</h1>
           <div>Intresting card with slideshow maybe</div>
         </div>
-        <hr></hr>
+      
 
-        <div>
-        <h2>Placeholder for site hero image</h2>
-        <button onClick={() => navigate("/Library")} >Browse Books</button>
+        <div >
+          <div>
+          <h2>Placeholder for site hero image</h2>
+          </div>
+          <div>
+          <button onClick={() => navigate("/Library")} >Browse Books</button>
+          </div>
           
-        </div>
+        </div> */}
         
+        <div className="main-text">
+          <h1>
+            Your online Library
+          </h1>
+
+          <button onClick={() => navigate("/Library")} >Browse Books</button>
+        </div>
         
       </main>
       <Footer />
