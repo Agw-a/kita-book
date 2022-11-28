@@ -8,11 +8,17 @@ const GeneralLibrary = () => {
   return (
     <>
     <NavBar />
+    <main className='library-layout'>
+
+    <div className='favorite-books-card'>
+       <Link to={"/Favorite-Books"}>Your favorite books</Link>
+    </div>    
     <div>
-      <div> <Link to={"/Favorite-Books"}>Your favorite books</Link></div>
+    <Outlet />
     
     </div>
-    <Outlet />
+
+    </main>
     <Footer />
     </>
   )

@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer>
     <div>
-      <p>Made by Agw-a</p>
+      <p>Made by <a href='https://github.com/Agw-a/kita-book' target={"_blank"} rel="noreferrer">Agw-a</a> </p>
+      
     </div>
     </footer>
 

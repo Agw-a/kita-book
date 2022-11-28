@@ -5,32 +5,35 @@
   --blue-tint: #C9FCE3;
   --white: #ffffff;
   --black: #111212;
+  --grey: #F0F3F2;
   --yellow-tint: #FFECA0;
 }
 
-
 /* Nav-Bar */
+.Logo{
+  max-width: 20px;
+  max-height: 20px;
+}
+
 .nab-bar-container{
   display: flex;
   height: 50px;
   border-bottom: px solid black;
-  background-color: var(--primary-color);
+  background-color: var(--white);
   width: 100vw; 
   justify-content: space-between;
+  border-bottom: 2px solid var(--black);
 }
 
-.Logo{
-  width: 20px;
-  height: 20px;
-}
 .Logo-holder{
   padding: 20px;
-  /* padding-left: 40px; */
+
 }
 
 nav a{
   text-decoration: none;
 }
+
 .Logo-holder span{
   text-decoration: none;
   color: var(--black);
@@ -38,7 +41,147 @@ nav a{
   font-size: 20px;
 }
 
+/* Footer */
+footer{
+  height: 50px;
+  border-top: 2px solid var(--black);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+footer div p{
+  font-weight: 900;
+  color: var(--black);
+}
+footer div p a{
+  text-decoration: none;
+}
+
+footer div p a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--primary-color);
+}
 /* Landing page */
+
+.homepage-body{
+  height: 100vh;
+  background-color: var(--blue-tint);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  
+
+}
+
+/* Loading Spinner */
+.spinner-container{
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+
+}
+
+@keyframes spinner{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner{
+  height: 50px;
+  width: 50px;
+  border: 10px solid var(--primary-color);
+  border-top: 10px solid var(--blue-tint);
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+
+/* Library display*/
+.library-layout{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(2);
+}
+
+.favorite-books-card{
+  margin-top: 70px;
+  width: 200px;
+  background-color: #fb663b;
+} 
+
+.Book-list{
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.book-cover{
+  display:  flex;
+  width: 40vw;
+}
+
+.individual-cover{
+  border-radius: 5px;
+  height: 30vh;
+  margin:20px 25px 20px 20px ;
+  box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
+}
+
+.individual-cover:hover{
+  cursor: pointer;
+  height: 32vh;
+}
+
+.display-book-details{
+  border: 2px solid var(--grey);
+  border-radius: 8px;
+  box-shadow: rgba(9, 30 ,66 ,0.25) 0px 4px 8px -2px, rgba(9, 30,66, 0, 0.08)0px 0px 0px 1px;
+  background-color: var(--white);
+  margin: 20px;
+  display: block;
+  width: 500px;
+  text-align: left;
+  padding: 20px;
+}
+
+.book-title{
+  margin-top: 10px;
+}
+.book-title h4{
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.author-display{
+  padding-bottom: 5px;
+}
+.author-display button{
+  background-color: var(--black);
+  color: var(--white);
+  height: 30px;
+  width: 160px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+}
+
 /* .hero-img{
   justify-content: center;
   text-align: center;
@@ -50,18 +193,7 @@ nav a{
   background-size: cover;
   background: url("../images/books.8dba9977.jpeg");
 } */
-
-
-
-.homepage-body{
-  height: 100vh;
-  background-color: var(--blue-tint);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-}
+/* 
 .main-text{
   max-height: 80vh;
   width: 80%;
@@ -70,8 +202,8 @@ nav a{
 .main-text h1{
   margin-bottom: 60px;
   font-size: 60px;
-}
-.main-text button{
+} */
+/* .main-text button{
   border-radius: 2px;
   height: 40px;
   width: 15vw;
@@ -103,24 +235,19 @@ nav a{
   color: black;
   font-weight: 900;
 }
-footer{
-  height: 50px;
-  border-top: 2px solid black;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-}
-.About-container{
+ */
+/* .About-container{
   height: 100vh;
 }
-.Book-list{
-  display: grid;
-  width: 100%;
-  height: 80vh;
-  background-color: rgb(127, 145, 127);
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-}
 
+ */
+
+/* 
+.library-layout{
+  display: flex;
+}
+*/
+.pagnation button.active{
+  background-color: #ffbd12;
+}
 /* Small-screen */
