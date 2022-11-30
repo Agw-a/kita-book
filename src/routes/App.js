@@ -17,7 +17,9 @@ function App() {
           <Route path="/" element={<LandingPage />}/>
           {/* <Route path="/About" element={<About />}/> */}
           <Route path="/Library" element={<GeneralLibrary />}>
+
             <Route index element={<Booklist />}/>
+            <Route path="Favorite-Books" element={<Favorites />}/>
           </Route>
           <Route path="Favorite-Books" element={<Favorites />}/>
           <Route path="/books/:id" element={<BookDetails />} />

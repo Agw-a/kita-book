@@ -1,51 +1,74 @@
-import React from 'react'
-import { useAppContext } from '../context/Context';
+import React from "react";
+import { useAppContext } from "../context/Context";
+import Booklist from "./Booklist";
+
 
 const FavoriteBooks = () => {
 
-    const {fav, addToFavorites, removeFromFavorites} = useAppContext();
+  // const slide = (shift) => {
+  //   scroll.current.scrollLeft += shift;
+  // }
 
+  const { fav, addToFavorites, removeFromFavorites } = useAppContext();
 
- 
-   
-    const checkFavoriteBooks = (id) => {
-  
-      const Checker  = fav.some((book) => book.id === id)
-  
-      return Checker
-    }
+  const checkFavoriteBooks = (id) => {
+    const Checker = fav.some((book) => book.id === id);
+
+    return Checker;
+  };
   return (
-    <div>
-      <h4>Your favorite books</h4>
-      { fav.length > 0 ?
-        fav.map((book) => {
-          return (
-            <div key={book.id}>
-              <div>
-                <h4> {book.title}</h4>
-              </div>
-              <div>
+    <div className="fav-page">
+      
+      <span className="for-you-title">For You</span>
+
+      <div className="fav-books-container">
+
+        {fav.length > 0 ? (
+          fav.map((book) => {
+            return (
+              <div key={book.id} className="fav-books">
+                <div>
+                  <img
+                    className="fav-book-img"
+                    src={book.image_url}
+                    alt={`Cover of ${book.title}`}
+                  />
+                </div>
+
+                <div>
+                  <div className="fav-book-title">
+                    <span> {book.title}</span>
+                  </div>
+                  {/* <div className='fav-book-title'>
                 <span>{book.genres}</span>
-              </div>
-              <div>
-                <img src={book.image_url} alt={`Cover of ${book.title}`}/>
-              </div>
-              <div>
-                {
-                  checkFavoriteBooks(book.id) ? <button onClick={() => removeFromFavorites(book.id)} >Remove from favorites</button> :
-                  <button onClick={() => addToFavorites(book)} >Add to favorites</button>
-                }
-                
-              </div>
+              </div> */}
 
-            </div>
-          )
-        }) : <h4>You havent added books to your library yet</h4>
-      }
-     
+                  <div className="fav-button">
+                    {checkFavoriteBooks(book.id) ? (
+                      <button onClick={() => removeFromFavorites(book.id)}>
+                        Remove from favorites
+                      </button>
+                    ) : (
+                      <button onClick={() => addToFavorites(book)}>
+                        Add to favorites
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        ) : (
+          <div className="favorite-books-empty">
+            <span>Add books to your Library</span>
+          </div>
+        )}
+       
+       {fav.length >= 3 ?  <div><button className="left-scroll" >left</button>  </div>  : <p></p> }
 
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default FavoriteBooks
+export default FavoriteBooks;
