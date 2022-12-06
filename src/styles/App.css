@@ -1,12 +1,13 @@
 :root{
-  --primary-color:#00c6ae;
+  --primary-color:#E2e6ec;
   --secondary-color:#fb663b;
   --secondary-color-2:#ffbd12;
-  --blue-tint: #C9FCE3;
+  --blue-tint: #bbc3cd;
   --white: #ffffff;
   --black: #111212;
-  --grey: #F0F3F2;
-  --yellow-tint: #FFECA0;
+  --grey: #FA4917;
+  --yellow-tint: #2a293e;
+  --button-main: #22afe4;
 }
 
 /* Nav-Bar */
@@ -49,6 +50,9 @@ footer{
   align-items: center;
   text-align: center;
   width: 100vw;
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
 }
 
 footer div p{
@@ -57,24 +61,63 @@ footer div p{
 }
 footer div p a{
   text-decoration: none;
+  color: var(--yellow-tint);
 }
 
 footer div p a:hover{
   cursor: pointer;
   text-decoration: underline;
-  color: var(--primary-color);
+  font-weight: bolder;
+  text-decoration: underline;
 }
 /* Landing page */
 
 .homepage-body{
   height: 100vh;
-  background-color: var(--blue-tint);
+  width: 100vw;
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
+ 
   
 
+}
+.books-landing-page{
+  display: flex;
+  gap: 24px;
+    justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 50px;
+}
+.landing-img{
+  height: 130px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+
+.hero-card{
+  width: 90vw;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+  height: 80vh;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.landing-page-button{
+  background-color: var(--secondary-color-2);
+  min-height: 50px ;
+  border-radius: 10px;
+  min-width: 200px;
+
+}
+
+.landing-page-button:hover{
+  cursor: pointer;
 }
 
 /* Loading Spinner */
@@ -108,57 +151,34 @@ footer div p a:hover{
 
 
 /* Library display*/
-.library-layout{
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  display: grid;
-  height: 100vh;
-  grid-template-columns: repeat(2);
+.button-img{
+  width: 20px;
+  height: 20px;
 }
-
-.favorite-books-card{
-  margin-top: 70px;
-  width: 200px;
-  background-color: #fb663b;
-} 
-
-.Book-list{
-  display: grid;
+.Library-main-page{
+  height: 100vh;
   width: 100vw;
-  height: 100vh;
-  background-color: var(--white);
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
 }
+
+.library-layout{
+  margin: 0px 30px 10px 30px;
+  height: 100vh;
+}
+
 
 .book-cover{
   display:  flex;
-  width: 40vw;
+  margin: 10px;
 }
-
 .individual-cover{
   border-radius: 5px;
-  height: 30vh;
-  margin:20px 25px 20px 20px ;
+  height: 120px;
+  margin:20px 25px 0px 0px ;
   box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
 }
-
 .individual-cover:hover{
   cursor: pointer;
-  height: 32vh;
-}
-
-.display-book-details{
-  border: 2px solid var(--grey);
-  border-radius: 8px;
-  box-shadow: rgba(9, 30 ,66 ,0.25) 0px 4px 8px -2px, rgba(9, 30,66, 0, 0.08)0px 0px 0px 1px;
-  background-color: var(--white);
-  margin: 20px;
-  display: block;
-  width: 500px;
-  text-align: left;
-  padding: 20px;
+  height: 125px;
 }
 
 .book-title{
@@ -172,40 +192,99 @@ footer div p a:hover{
 .author-display{
   padding-bottom: 5px;
 }
+
 .author-display button{
-  background-color: var(--black);
+  background-color: var(--blue-tint);
   color: var(--white);
-  height: 30px;
-  width: 160px;
+  height: 40px;
+  width: 40px;
   text-align: center;
   border: none;
   border-radius: 4px;
 }
 
+.author-display button:hover{
+  cursor: pointer;
+}
+.Book-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr ; 
+  height: 60vh;
+  gap: 4px 8px; 
+  background-color: var(--white);
+  height: 100vh;
+  margin: 30px;
+}
+.display-book-details{
+  border-radius: 8px;
+  background-color: var(--grey);
+  box-shadow: rgba(9, 30 ,66 ,0.25) 0px 4px 8px -2px, rgba(9, 30,66, 0, 0.08)0px 0px 0px 1px;
+  
+}
+
+/* .display-book-details{
+  border-radius: 8px;
+  
+  background-color: var(--grey);
+  margin: 20px;
+  display: block;
+  width: 500px;
+  text-align: left;
+  padding: 20px;
+} */
+/* 
+
+.favorite-books-card{
+  margin-top: 70px;
+  width: 200px;
+  background-color: #fb663b;
+}  */
+
+/* .Book-list{
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  align-items: center; 
+  
+  
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; 
+
+
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows:1fr 1fr ;
+  justify-items: center;
+} */
+
+
+
+
 /* Fav-books */
 .for-you-title{
   font-size: 20px;
-  color: var(--black);
-  font-weight: 900;
+  color: var(--yellow-tint);
+  font-weight: 700;
 }
 .fav-page{
   margin: 30px;
   
 }
 .fav-books-container{
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   justify-content: center;
   border-radius: 20px;
   text-align: center;
   align-items: center;
-  height: 30vh;
+  /* height: 25vh; */
   display: flex;
-  gap: 4px;
+  gap: 8px;
 }
 
 .fav-book-img{
   height: 90%;
-  width: 70px;
+  width: 80px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -214,10 +293,9 @@ footer div p a:hover{
 }
 
 .fav-button button{
-  background-color: var(--black);
-  color: var(--white);
-  height: 30px;
-  width: 160px;
+  background-color: var(--button-main);
+  height: 40px;
+  width: 40px;
   text-align: center;
   border: none;
   border-radius: 4px;
@@ -226,13 +304,15 @@ footer div p a:hover{
   background-color: var(--grey);
 }
 .fav-books{
-  background-color: var(--white);
+  background-color: var(--secondary-color-2);
   border-radius: 8px;
   display: flex;
-  width: 50vw;
+  width: 250px;
   height: 20vh;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   
 }
 .fav-book-title{
@@ -244,14 +324,15 @@ footer div p a:hover{
 /* individual-book */
 .detail-background{
   height: 100vh;
+  width: 100vw;
   background-color: var(--secondary-color-2);
 }
 .detail-container{
   justify-content: center;
   text-align: center;
   align-items: center;
-  padding: 50px;
-  margin-bottom: 50px;
+  margin: 0px 30px 60px 30px;
+
 }
 
 .detail-card{
@@ -259,12 +340,12 @@ footer div p a:hover{
   background-color: var(--white);
 }
 .detail-button{
-  background-color: var(--white);
+  background-color: transparent;
   border-bottom: 2px solid var(--black);
   border-top: none;
   border-left: none;
   border-right: none;
-  margin: 20px 0px 20px 20px;
+  margin: 50px 0px 5px 20px;
   font-size: 15px;
   font-weight: 800;
   font-family: 'Space Grotesk', sans-serif;
@@ -279,37 +360,70 @@ footer div p a:hover{
 
 .detail-img{
   padding: 20px;
+  
 }
 
 .detail-img img{
-  border-radius: 10px;
+  border-radius: 2px  30px 30px 2px;
   height: 40vh;
+  margin-top: 30px;
   margin-left: 50px;
   margin-right: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .detail-text{
   text-align: left;
 }
 
+.detail-book-titles{
+  margin: 15px 0px 15px 0px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.detail-titles-author{
+  margin: 0px 0px 15px 0px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+}
 .detail-titles{
   margin: 15px 0px 15px 0px;
+  font-family: 'Inter', sans-serif;
 }
 .detail-description{
   margin: 15px 0px 15px 0px;
-  padding: 20px;
+
 }
 
+.description-genres{
+  padding-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.description-text{
+  padding-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+  line-height: 32px;
+  padding-left: 10px;
+}
+.description-pages{
+  padding-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+}
 .detail-quote{
-  padding: 20px;
+  margin-bottom: 10px;
 }
 
 .detail-quote blockquote {
   background-color: var(--grey);
-  border-left: 10px solid var(--black);
+  border-left: 10px solid var(--secondary-color-2);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  quotes: "\201C" " \201D" "\2018" "\2019";
+  /* quotes: "\201C" " \201D" "\2018" "\2019"; */
 }
 
 .detail-quote blockquote::before{
@@ -390,6 +504,20 @@ footer div p a:hover{
   display: flex;
 }
 */
+
+/* .pagnation{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  text-align: center;
+  align-items: center; 
+  background-color: aqua;
+
+}
+.pagnation button{
+  width: 20px;
+  height: 40px;
+} */
 .pagnation button.active{
   background-color: #ffbd12;
 }

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/App.css";
 import Loader from "./Loader";
 import Pagnation from "./Pagnation";
+import AddFavorite from './interactions/add'
+import RemoveFavorite from "./interactions/remove"
 
 
 const Booklist = () => {
@@ -17,7 +19,7 @@ const Booklist = () => {
   // const [search, setSearch] = useState("");
   // console.log(search);
 
-  const [postPerPage, setPostPerPage] = useState([6]);
+  const [postPerPage, setPostPerPage] = useState([8]);
   const [currentPage, setcurrentPage] = useState([1]);
 
   const { fav, addToFavorites, removeFromFavorites } = useAppContext();
@@ -55,6 +57,7 @@ const Booklist = () => {
           onChange={(event) => setSearch(event.target.value)}
         />
       </div> */}
+
       <div className="Book-list">
         {loading ? (
           <Loader />
@@ -78,26 +81,26 @@ const Booklist = () => {
                       <h4> {book.title}</h4>
                     </div>
 
-                    <div className="author-display">
+                    {/* <div className="author-display">
                       <span>{book.authors}</span>
-                    </div>
+                    </div> */}
 
                     <div className="author-display">
                       <span>{book.num_pages}</span> | <span>{book.format}</span>
                     </div>
 
-                    <div className="author-display">
+                    {/* <div className="author-display">
                       <span>{book.genres}</span>
-                    </div>
+                    </div> */}
 
                     <div className="author-display">
                       {checkFavoriteBooks(book.id) ? (
                         <button onClick={() => removeFromFavorites(book.id)}>
-                          Remove from favorites
+                          {< RemoveFavorite />}
                         </button>
                       ) : (
                         <button onClick={() => addToFavorites(book)}>
-                          Add to favorites
+                          { < AddFavorite /> }
                         </button>
                       )}
                     </div>

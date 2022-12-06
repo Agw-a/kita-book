@@ -12,32 +12,44 @@ const LandingPage = () => {
     <>
       <NavBar />
       <main className="homepage-body">
+        <div className="hero-card">
         <div className="hero-img">
-          <h1>01.</h1>
+          
           <h1>Discover Books</h1>
           <div className="main-text">
           <h1>
-            Your online Library
+            Buld your online Library
           </h1>
 
-          <button onClick={() => navigate("/Library")} >Browse Books</button>
+         
         </div>
         </div>
       
 
-        <div >
+        <div className="books-landing-page">
+          <div >
+          
+          <img className="landing-img"
+          src="https://img.theculturetrip.com/1440x/smart/wp-content/uploads/2018/02/don-quixote.jpg" alt="book-shelf"
+          />
+          </div>
           <div>
-          <h2>Placeholder for site hero image</h2>
-          <img 
-          src="../images/books.8dba9977.jpeg" alt="book-shelf"
+          <img className="landing-img"
+          src="https://img.theculturetrip.com/1440x/smart/wp-content/uploads/2018/02/ricardo.png" alt="book-shelf"
+          />
+          </div>
+
+          <div>
+          <img className="landing-img"
+          src="https://img.theculturetrip.com/1440x/smart/wp-content/uploads/2018/02/white.jpg" alt="book-shelf"
           />
           </div>
           
-          
         </div>
+        <button className="landing-page-button" onClick={() => navigate("/Library")} >Browse Books</button>
         
 
-        
+        </div>
       </main>
       <Footer />
     </>

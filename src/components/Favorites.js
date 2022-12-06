@@ -1,6 +1,8 @@
 import React from "react";
 import { useAppContext } from "../context/Context";
 import Booklist from "./Booklist";
+import AddFavorite from './interactions/add'
+import RemoveFavorite from "./interactions/remove"
 
 
 const FavoriteBooks = () => {
@@ -19,7 +21,7 @@ const FavoriteBooks = () => {
   return (
     <div className="fav-page">
       
-      <span className="for-you-title">For You</span>
+      <span className="for-you-title">Your Library</span>
 
       <div className="fav-books-container">
 
@@ -46,11 +48,11 @@ const FavoriteBooks = () => {
                   <div className="fav-button">
                     {checkFavoriteBooks(book.id) ? (
                       <button onClick={() => removeFromFavorites(book.id)}>
-                        Remove from favorites
+                        {<RemoveFavorite />}
                       </button>
                     ) : (
                       <button onClick={() => addToFavorites(book)}>
-                        Add to favorites
+                        {< AddFavorite />}
                       </button>
                     )}
                   </div>
@@ -60,7 +62,7 @@ const FavoriteBooks = () => {
           })
         ) : (
           <div className="favorite-books-empty">
-            <span>Add books to your Library</span>
+            {/* <span>Add books to your Library</span> */}
           </div>
         )}
        
