@@ -1,6 +1,7 @@
 # Kita-Book - The online Library
 
-<img src = "[image.png](https://drive.google.com/file/d/15WcrM7EOC1l_2LPWq5P6c_wKl9DzE-7D/view?usp=sharing)"/>
+<img src = "../src/images/screenshot.png" width="100%" height="400px"/>
+
 ---
 
 ## Introduction
@@ -23,6 +24,6 @@ To run this project on your local machine:
 
 ---
 ## Authors
-- :lady Elizabeth Agwa
+- 👩🏿‍💻 Elizabeth Agwa
 - [Github](https://github.com/Agw-a)
 
