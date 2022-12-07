@@ -1,6 +1,6 @@
 # Kita-Book - The online Library
 
-<img src = "https://github.com/Agw-a/kita-book/blob/main/src/images/screenshot.png" width="100%" height="400px"/>
+<img src = "https://github.com/Agw-a/kita-book/blob/main/src/images/screenshot.png" width="100%"/>
 
 ---
 
