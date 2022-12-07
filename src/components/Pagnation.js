@@ -6,13 +6,16 @@ const Pagnation = ({totalPosts,  postsPerPage, setCurrentPage, currentPage}) => 
       pages.push(i)
     }
 
+
     return(
+        <div className = 'pagnation-container'>
         <div className='pagnation'>
             {pages.map((page, index) => {
                 return (
-                    <button onClick={() => setCurrentPage(page)} key={index} className={page === currentPage ? "active": ''} >{page}</button>
+                    <button  onClick={() => setCurrentPage(page)} key={index} className={page === currentPage ? "active": ''} >{page}</button>
                 )
             })}
+        </div>
         </div>
     )
   }

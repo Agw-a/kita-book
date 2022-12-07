@@ -19,8 +19,9 @@ const Booklist = () => {
   // const [search, setSearch] = useState("");
   // console.log(search);
 
-  const [postPerPage, setPostPerPage] = useState([8]);
+  const [postPerPage, setPostPerPage] = useState([12]);
   const [currentPage, setcurrentPage] = useState([1]);
+
 
   const { fav, addToFavorites, removeFromFavorites } = useAppContext();
 
@@ -48,7 +49,7 @@ const Booklist = () => {
   }, []);
 
   return (
-    <>
+    <section>
     
       {/* <div>
         <input
@@ -86,7 +87,7 @@ const Booklist = () => {
                     </div> */}
 
                     <div className="author-display">
-                      <span>{book.num_pages}</span> | <span>{book.format}</span>
+                      <span>{book.num_pages}</span> <span>|</span> <span>{book.format}</span>
                     </div>
 
                     {/* <div className="author-display">
@@ -110,7 +111,10 @@ const Booklist = () => {
             })
         )}
 
-        <div className="pagnation">
+      </div>
+
+      
+      <div className = 'paginate'>
           <Pagnation
             totalPosts={books.length}
             postsPerPage={postPerPage}
@@ -118,8 +122,7 @@ const Booklist = () => {
             currentPage={currentPage}
           />
         </div>
-      </div>
-    </>
+    </section>
   );
 };
 

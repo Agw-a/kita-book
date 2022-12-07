@@ -66,7 +66,7 @@ const FavoriteBooks = () => {
           </div>
         )}
        
-       {fav.length >= 3 ?  <div><button className="left-scroll" >left</button>  </div>  : <p></p> }
+       {/* {fav.length >= 3 ?  <div><button className="left-scroll" >left</button>  </div>  : <p></p> } */}
 
       </div>
     </div>

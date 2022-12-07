@@ -44,15 +44,17 @@ nav a{
 
 /* Footer */
 footer{
-  height: 5vh;
+  height: 3vh;
   border-top: 2px solid var(--black);
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 100vw;
-  /* position: fixed;
+  position: fixed;
+  background-color: var(--white);
   left: 0;
-  bottom: 0; */
+  bottom: 0;
+
 }
 
 footer div p{
@@ -122,7 +124,7 @@ footer div p a:hover{
 
 /* Loading Spinner */
 .spinner-container{
-  /* backdrop-filter: blur(10px); */
+width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -218,7 +220,6 @@ footer div p a:hover{
 }
 .display-book-details{
   border-radius: 8px;
-  background-color: var(--grey);
   box-shadow: rgba(9, 30 ,66 ,0.25) 0px 4px 8px -2px, rgba(9, 30,66, 0, 0.08)0px 0px 0px 1px;
   
 }
@@ -280,6 +281,7 @@ footer div p a:hover{
   /* height: 25vh; */
   display: flex;
   gap: 8px;
+  overflow-x: scroll;
 }
 
 .fav-book-img{
@@ -504,21 +506,173 @@ footer div p a:hover{
   display: flex;
 }
 */
-
-/* .pagnation{
-  display: flex;
-  gap: 12px;
+.paginate{
+  margin-bottom: 5px;
+  height: 50px;
   justify-content: center;
   text-align: center;
   align-items: center; 
-  background-color: aqua;
 
 }
+.pagnation{
+  display: flex;
+  gap: 2px;
+}
 .pagnation button{
-  width: 20px;
-  height: 40px;
-} */
+  width: 60px;
+  height: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  margin-bottom:2px 1px 2px 1px ;
+}
 .pagnation button.active{
   background-color: #ffbd12;
 }
+
+
 /* Small-screen */
+@media only screen and (max-width: 1200px){
+  /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (max-width: 600px){
+/*Big smartphones [426px -> 600px]*/
+
+
+}
+@media only screen and (max-width: 425px){
+/*Small smartphones [325px -> 425px]*/
+.hero-card{
+  width: 90vw;
+}
+.hero-img h1{
+  font-size: 20px;
+  margin-top: 5px;
+}
+.landing-img{
+border-bottom : 1px solid var(--black);
+}
+.landing-page-button{
+  width: 80px;
+}
+
+.Library-main-page{
+  height: 100vh;
+  width: 100vw;
+}
+.library-layout{
+  height: 100vh;
+   width: 100vw;
+  margin: 0px;
+}
+.Book-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+  height: 100%;
+  width: 90vw;
+  margin: 5px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.book-cover{
+  width: 100%;
+  border: 2px solid black;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.individual-cover{
+  height: 50px;
+  margin: 5px 5px 0px 0px;
+}
+.book-title h4{
+font-size: 10px;
+padding: 0px;
+}
+.button-img{
+  padding: 2px;
+  width: 10px;
+  height: 10px;
+}
+.author-display button{
+  height: 30px;
+  width: 30px;
+}
+.author-display span{
+  font-size: 10px;
+}
+
+.for-you-title{
+  font-size: 10px;
+  color: var(--yellow-tint);
+  font-weight: 500;
+}
+.fav-page{
+  margin: 5px;
+  
+}
+.fav-books-container{
+  background-color: var(--primary-color);
+  justify-content: center;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+  max-height: 20%;
+  display: flex;
+  gap: 2px;
+  overflow-x: scroll;
+}
+
+.fav-book-img{
+  max-height: 80%;
+  max-width: 80px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
+}
+
+.fav-button button{
+  background-color: var(--button-main);
+  height: 20px;
+  width: 60px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+}
+.favorite-books-empty{
+  background-color: var(--grey);
+}
+.fav-books{
+  background-color: var(--secondary-color-2);
+  border-radius: 8px;
+  display: flex;
+  max-width: 250px;
+  max-height: 80%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+.fav-book-title{
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 10px;
+}
+.Logo-holder span{
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 15px;
+}
+.Logo{
+  max-width: 15px;
+  max-height: 15px;
+}
+}
+
