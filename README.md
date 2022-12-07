@@ -1,7 +1,8 @@
 # Kita-Book - The online Library
 
-<img src = "../images/screenshot.png"/>
+<img src = "[image.png](https://drive.google.com/file/d/15WcrM7EOC1l_2LPWq5P6c_wKl9DzE-7D/view?usp=sharing)"/>
 ---
+
 ## Introduction
 <p> This  is an online book library that enables users curate favorite book lists. It is a web app that enables users browse through a library provided by draftBit books API.</p>
 
