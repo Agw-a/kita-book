@@ -28,7 +28,7 @@ const AppContextProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{fav, addToFavorites, removeFromFavorites}}>
+    <AppContext.Provider value={{ fav, addToFavorites, removeFromFavorites }}>
       {children}
     </AppContext.Provider>
   );

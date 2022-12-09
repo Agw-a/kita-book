@@ -1,3 +1,7 @@
+/**
+ * @AddFavorite: add to favorite component 
+ */
+ 
 import React from 'react'
 
 const AddFavorite = () => {

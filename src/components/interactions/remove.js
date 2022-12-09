@@ -1,3 +1,7 @@
+/**
+ * @RemoveFavorite: remove from favorite component 
+ */
+
 import React from 'react'
 
 const RemoveFavorite = () => {

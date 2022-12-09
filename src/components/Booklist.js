@@ -6,9 +6,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/App.css";
 import Loader from "./Loader";
 import Pagnation from "./Pagnation";
-import AddFavorite from './interactions/add'
-import RemoveFavorite from "./interactions/remove"
-
+import AddFavorite from "./interactions/add";
+import RemoveFavorite from "./interactions/remove";
 
 const Booklist = () => {
   const navigate = useNavigate();
@@ -16,12 +15,8 @@ const Booklist = () => {
 
   const [books, setBooks] = useState([]);
 
-  // const [search, setSearch] = useState("");
-  // console.log(search);
-
   const [postPerPage, setPostPerPage] = useState([12]);
   const [currentPage, setcurrentPage] = useState([1]);
-
 
   const { fav, addToFavorites, removeFromFavorites } = useAppContext();
 
@@ -41,7 +36,6 @@ const Booklist = () => {
     axios
       .get(LIBRARY_URL)
       .then((response) => {
-        // console.log(response.data)
         setBooks(response.data);
         setLoading(false);
       })
@@ -50,78 +44,58 @@ const Booklist = () => {
 
   return (
     <section>
-    
-      {/* <div>
-        <input
-          type={"text"}
-          placeholder="Search..."
-          onChange={(event) => setSearch(event.target.value)}
-        />
-      </div> */}
-
       <div className="Book-list">
         {loading ? (
           <Loader />
         ) : (
-          currentPost
-            // .filter((book) => book.title.toLowerCase().includes(search))
-            .map((book) => {
-              return (
-                <div key={book.id} className="book-cover">
-                  <div>
-                    <img
-                      className="individual-cover"
-                      onClick={() => navigate(`/books/${book.id}`)}
-                      src={book.image_url}
-                      alt={`Cover of ${book.title}`}
-                    />
+          currentPost.map((book) => {
+            return (
+              <div key={book.id} className="book-cover">
+                <div>
+                  <img
+                    className="individual-cover"
+                    onClick={() => navigate(`/books/${book.id}`)}
+                    src={book.image_url}
+                    alt={`Cover of ${book.title}`}
+                  />
+                </div>
+
+                <div className="display-book-details">
+                  <div className="book-title">
+                    <h4> {book.title}</h4>
                   </div>
 
-                  <div className="display-book-details">
-                    <div className="book-title">
-                      <h4> {book.title}</h4>
-                    </div>
+                  <div className="author-display">
+                    <span>{book.num_pages}</span> <span>|</span>{" "}
+                    <span>{book.format}</span>
+                  </div>
 
-                    {/* <div className="author-display">
-                      <span>{book.authors}</span>
-                    </div> */}
-
-                    <div className="author-display">
-                      <span>{book.num_pages}</span> <span>|</span> <span>{book.format}</span>
-                    </div>
-
-                    {/* <div className="author-display">
-                      <span>{book.genres}</span>
-                    </div> */}
-
-                    <div className="author-display">
-                      {checkFavoriteBooks(book.id) ? (
-                        <button onClick={() => removeFromFavorites(book.id)}>
-                          {< RemoveFavorite />}
-                        </button>
-                      ) : (
-                        <button onClick={() => addToFavorites(book)}>
-                          { < AddFavorite /> }
-                        </button>
-                      )}
-                    </div>
+                  <div className="author-display">
+                    {checkFavoriteBooks(book.id) ? (
+                      <button onClick={() => removeFromFavorites(book.id)}>
+                        {<RemoveFavorite />}
+                      </button>
+                    ) : (
+                      <button onClick={() => addToFavorites(book)}>
+                        {<AddFavorite />}
+                      </button>
+                    )}
                   </div>
                 </div>
-              );
-            })
+              </div>
+            );
+          })
         )}
-
       </div>
 
-      
-      <div className = 'paginate'>
-          <Pagnation
-            totalPosts={books.length}
-            postsPerPage={postPerPage}
-            setCurrentPage={setcurrentPage}
-            currentPage={currentPage}
-          />
-        </div>
+      <div className="paginate">
+        <Pagnation
+          totalPosts={books.length}
+          postsPerPage={postPerPage}
+          setCurrentPage={setcurrentPage}
+          currentPage={currentPage}
+        />
+      </div>
     </section>
   );
 };

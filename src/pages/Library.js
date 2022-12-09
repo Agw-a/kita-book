@@ -1,5 +1,5 @@
 import React from "react";
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Favorites from "../pages/Favorites";
@@ -9,19 +9,12 @@ const GeneralLibrary = () => {
     <>
       <NavBar />
       <main className="Library-main-page">
-      <Favorites />
-      <div className="library-layout">
-        {/* <div className="favorite-books-card">
-          
-          <Link to={"/Favorite-Books"}>Your favorite books</Link>
-        </div> */}
-        
+        <Favorites />
+        <div className="library-layout">
           <Outlet />
-        
-      </div>
+        </div>
       </main>
       <Footer />
-      
     </>
   );
 };
