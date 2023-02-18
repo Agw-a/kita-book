@@ -99,7 +99,9 @@ footer div p a:hover{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-
+.landing-img:hover{
+  height: 135px;
+}
 
 .hero-card{
   width: 90vw;
@@ -327,7 +329,6 @@ width: 100vw;
 .detail-background{
   height: 100vh;
   width: 100vw;
-  background-color: var(--secondary-color-2);
 }
 .detail-container{
   justify-content: center;
@@ -441,71 +442,8 @@ width: 100vw;
   font-size: 0.6em;
   /* display: inline; */
 }
-/* .hero-img{
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  margin: 20px;
-  border-radius: 40px;
-  width: 50%;
-  background-size: cover;
-  background: url("../images/books.8dba9977.jpeg");
-} */
-/* 
-.main-text{
-  max-height: 80vh;
-  width: 80%;
-  border-bottom:  1px solid var(--black);
-}
-.main-text h1{
-  margin-bottom: 60px;
-  font-size: 60px;
-} */
-/* .main-text button{
-  border-radius: 2px;
-  height: 40px;
-  width: 15vw;
-  background-color: var(--black);
-  color: var(--white);
-  margin-bottom: 20px;
-  border: none;
-}
-
-.main-text button:hover{
-  border-left: 4px solid var(--yellow-tint);
-  background-color: var(--white);
-  color: var(--black);
-  border-radius: 8px;
-
-}
-
-.About-nav{
-  padding-right: 20px;
-  padding: 20px;
-  font-size: 1.5rem;
 
 
-}
-.About-Link{
-  text-decoration: none;
-}
-.About-nav p{
-  color: black;
-  font-weight: 900;
-}
- */
-/* .About-container{
-  height: 100vh;
-}
-
- */
-
-/* 
-.library-layout{
-  display: flex;
-}
-*/
 .paginate{
   margin-bottom: 5px;
   height: 50px;
@@ -531,19 +469,11 @@ width: 100vw;
 }
 
 
-/* Small-screen */
+
 @media only screen and (max-width: 1200px){
-  /*Tablets [601px -> 1200px]*/
-}
-@media only screen and (max-width: 600px){
-/*Big smartphones [426px -> 600px]*/
-
-
-}
-@media only screen and (max-width: 425px){
 /*Small smartphones [325px -> 425px]*/
 .hero-card{
-  width: 90vw;
+  margin: 0 40px 0 40px;
 }
 .hero-img h1{
   font-size: 20px;
@@ -571,18 +501,18 @@ border-bottom : 1px solid var(--black);
   grid-template-rows: 1fr 1fr;
   align-items: end;
   height: 100%;
-  width: 90vw;
-  margin: 5px;
+  gap: 8px;
+  row-gap: 20px;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 .book-cover{
   width: 100%;
-  border: 2px solid black;
+  border-left: 2px solid black;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 .individual-cover{
   height: 50px;
@@ -673,6 +603,23 @@ padding: 0px;
 .Logo{
   max-width: 15px;
   max-height: 15px;
+}
+.detail-card{
+  display: block;
+}
+.detail-container{
+  text-align: left;
+}
+.detail-img{
+  padding: 5px;
+}
+.detail-img img {
+  height: 20vh;
+  margin: 10px 15px 5px 0;
+}
+.detail-book-titles{
+  margin: 2px;
+  font-size: 1em;
 }
 }
 
