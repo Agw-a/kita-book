@@ -8,10 +8,12 @@ import Loader from "./Loader";
 import Pagnation from "./Pagnation";
 import AddFavorite from "./interactions/add";
 import RemoveFavorite from "./interactions/remove";
+import SearchButton from "./search/SearchButton";
 
 const Booklist = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [searchTtle, setSearchResult] = useState([])
 
   const [books, setBooks] = useState([]);
 
@@ -38,12 +40,15 @@ const Booklist = () => {
       .then((response) => {
         setBooks(response.data);
         setLoading(false);
+        
+        
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <section>
+      
       <div className="Book-list">
         {loading ? (
           <Loader />

@@ -8,6 +8,7 @@ import Booklist from "../components/Booklist";
 import BookDetails from "../components/BookDetails";
 import Favorites from "../pages/Favorites";
 import Loader from "../components/Loader";
+import SearchPage from "../pages/SearchPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="Favorite-Books" element={<Favorites />}/>
           </Route>
           <Route path="Favorite-Books" element={<Favorites />}/>
+          <Route path='Search-books' element={<SearchPage />}/>
           <Route path="/books/:id" element={<BookDetails />} />
           <Route path="/spiner" element={<Loader />}/>
         </Routes>

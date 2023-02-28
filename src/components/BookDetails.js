@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/App.css";
-import "../styles/smallScreens.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";

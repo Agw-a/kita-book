@@ -13,7 +13,7 @@ const LandingPage = () => {
           <div className="hero-img">
             <h1>Discover Books</h1>
             <div className="main-text">
-              <h1>Buld your online Library</h1>
+              <h1>Build your online Library</h1>
             </div>
           </div>
 
